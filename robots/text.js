@@ -11,7 +11,10 @@ async function robot(content) {
         
         const algorithmiaAuthenticated = algorithmia(algorithmiaApiKey)
         const wikipediaAlgorithm = algorithmiaAuthenticated.algo("web/WikipediaParser/0.1.2?timeout=300")
-        const wikipediaResponse = await wikipediaAlgorithm.pipe(content.searchTerm)
+        const wikipediaResponse = await wikipediaAlgorithm.pipe({
+            "lang" : content.lang,
+            "articleName": content.searchTerm
+        })
         const wikipediaContent = wikipediaResponse.get()
         
         content.sourceContentOriginal = wikipediaContent.content
@@ -55,10 +58,6 @@ async function robot(content) {
             });
             console.log(content)
         }
-
-
-
-
     }
 }
 
