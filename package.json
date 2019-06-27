@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SSteringS/projetos-robos/issues"
   },
-  "homepage": "https://github.com/SSteringS/projetos-robos#readme"
+  "homepage": "https://github.com/SSteringS/projetos-robos#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
